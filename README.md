@@ -1,3 +1,3 @@
 # Board
 
-![Demo pic](https://raw.githubusercontent.com/FrameBassman/Board/master/demo.png)
+![Demo pic](https://raw.githubusercontent.com/FrameBassman/Board/master/demo.jpg)
