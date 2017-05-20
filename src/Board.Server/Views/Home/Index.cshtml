@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<p>
+    <h2>Virtual machines</h2>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Server Name</th>
+            <th>IP</th>
+            <th>Status</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+            foreach (var vm in ViewBag.VMs)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@vm.Name</td>
+                    <td>@vm.IpAddress</td>
+                    <td>@vm.Status</td>
+                    <td>@vm.UsedBy</td>
+                </tr>
+                i++;
+            }
+        }
+    </tbody>
+</table>
