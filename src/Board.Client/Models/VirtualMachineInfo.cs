@@ -20,12 +20,14 @@ namespace Board.Client.Models
 
         public string UsedBy;
         public string IpAddressString => _ipAddress.ToString();
+        public string Name;
         private readonly IPAddress _ipAddress;
 
-        public VirtualMachineInfo(string s, IPAddress a)
+        public VirtualMachineInfo(string name, string usedBy, IPAddress ipAddress)
         {
-            UsedBy = s;
-            _ipAddress = a;
+            Name = name;
+            UsedBy = usedBy;
+            _ipAddress = ipAddress;
         }
     }
 }

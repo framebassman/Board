@@ -2,20 +2,33 @@
 using System.Management;
 using System.Net;
 using System.Net.Sockets;
-using System.Security.Principal;
 using System.Web.Http;
 using Board.Client.Models;
 
 namespace Board.Client.Controllers
 {
+    using System.Web;
+
     public class VirtualMachineInfoController : ApiController
     {
+        /// <summary>
+        /// Returns information about virtual machine.
+        /// </summary>
+        /// <returns>
+        /// Information about virtual machine.
+        /// </returns>
         public VirtualMachineInfo Get()
         {
-            string username = GetCurrentUser();
+            var username = GetCurrentUser();
+            var machineName = GetCurrentMachineName();
             var ip = GetLocalIpAddress();
 
-            return new VirtualMachineInfo(username, ip);
+            return new VirtualMachineInfo(machineName, username, ip);
+        }
+
+        private string GetCurrentMachineName()
+        {
+            return HttpContext.Current.Server.MachineName;
         }
 
         private IPAddress GetLocalIpAddress()
