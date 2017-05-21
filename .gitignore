@@ -290,6 +290,7 @@ __pycache__/
 
 # Config transformation
 src/*/Web.[Dd]ebug.config
+src/Board.Client/Web.config
 
 #Packages
 !/packages/
